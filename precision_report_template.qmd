@@ -1,0 +1,115 @@
+---
+title: "Report Title"
+subtitle: "Subtitle or Study Name"
+author: "Conal Monaghan"
+date: today
+date-format: "DD MMMM YYYY"
+
+format:
+  html:
+    theme:
+      - flatly
+      - precision_custom.scss
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    toc-title: "Contents"
+    toc-expand: true
+    number-sections: false
+    smooth-scroll: true
+    code-fold: true
+    code-tools: true
+    code-overflow: wrap
+    highlight-style: github
+    embed-resources: true
+    fig-width: 8
+    fig-height: 5
+    fig-align: center
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    citations-hover: true
+    footnotes-hover: true
+
+execute:
+  echo: true
+  warning: false
+  message: false
+  cache: false
+
+bibliography: references.bib
+csl: apa.csl
+
+brand: _brand.yml
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# =============================================================================
+# USER INPUTS
+# =============================================================================
+
+# Add project-specific inputs here
+
+# =============================================================================
+# END USER INPUTS
+# =============================================================================
+
+packages <- c(
+  "here",
+  "readr",
+  "dplyr",
+  "tidyr",
+  "ggplot2",
+  "patchwork",
+  "gt",
+  "gtsummary",
+  "knitr",
+  "sessioninfo"
+)
+
+install_and_load <- function(pkgs) {
+  missing <- pkgs[!pkgs %in% installed.packages()[, "Package"]]
+  if (length(missing) > 0) install.packages(missing)
+  invisible(lapply(pkgs, library, character.only = TRUE))
+}
+
+install_and_load(packages)
+```
+
+## Overview
+
+*Brief description of this report's purpose and scope.*
+
+## Method
+
+### Participants
+
+### Measures
+
+### Analysis
+
+## Results
+
+## Discussion
+
+## References
+
+::: {#refs}
+:::
+
+```{r}
+#| label: session-info
+#| echo: false
+
+sessioninfo::session_info()
+```
+
+```{r}
+#| label: pkg-bibliography
+#| echo: false
+#| results: asis
+
+knitr::write_bib(x = packages, file = here::here("references.bib"))
+```

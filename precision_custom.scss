@@ -1,0 +1,274 @@
+/*-- precision_custom.scss --*/
+/*-- Precision Advanced Psychometrics & Assessment Lab --*/
+/*-- Quarto HTML theme override --*/
+
+/*============================================================
+  FONTS
+============================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/*============================================================
+  COLOUR TOKENS
+============================================================*/
+$teal-dark:   #1a6b7c;
+$teal-mid:    #2a9d8f;
+$teal-light:  #4fc3b0;
+$teal-pale:   #e8f5f3;
+$slate:       #2c3e50;
+$text:        #1a2a2e;
+$muted:       #6b8a8f;
+$border:      #d0e8e4;
+$white:       #ffffff;
+
+/*============================================================
+  QUARTO SASS VARIABLES
+============================================================*/
+$body-bg:             $white;
+$body-color:          $text;
+$link-color:          $teal-mid;
+$link-hover-color:    $teal-dark;
+
+$font-family-base:    'Source Serif 4', Georgia, serif;
+$font-family-code:    'JetBrains Mono', monospace;
+$headings-font-family: 'Raleway', sans-serif;
+$headings-color:      $teal-dark;
+$headings-font-weight: 700;
+
+$navbar-bg:           $teal-dark;
+$navbar-fg:           $white;
+
+$sidebar-bg:          $teal-pale;
+$sidebar-fg:          $text;
+$sidebar-border:      $border;
+
+$code-bg:             #f0faf8;
+$code-color:          $teal-dark;
+
+/*============================================================
+  SIDEBAR TOC — logo above, sticky, clean
+============================================================*/
+
+/* Sidebar container */
+#quarto-sidebar,
+.sidebar.toc-left {
+  background-color: $teal-pale !important;
+  border-right: 1px solid $border !important;
+  padding-top: 0 !important;
+}
+
+/* Logo above TOC */
+#quarto-sidebar::before,
+.sidebar.toc-left::before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding: 1.5rem 1.5rem 1rem;
+  background-image: url('https://raw.githubusercontent.com/ConalMonaghan/Precision_template/main/logo.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 80%;
+  min-height: 140px;
+  border-bottom: 1px solid $border;
+  margin-bottom: 1rem;
+}
+
+/* TOC title */
+#quarto-sidebar .sidebar-title,
+.sidebar-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $muted;
+  padding: 0 1.5rem 0.5rem;
+}
+
+/* TOC links */
+.sidebar nav a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  color: $text !important;
+  font-weight: 400;
+  padding: 0.2rem 0;
+  border-left: 2px solid transparent;
+  padding-left: 0.75rem;
+  transition: all 0.15s ease;
+}
+
+.sidebar nav a:hover {
+  color: $teal-dark !important;
+  border-left-color: $teal-mid;
+  background: transparent;
+}
+
+/* Active TOC item */
+.sidebar nav a.active {
+  color: $teal-dark !important;
+  font-weight: 600;
+  border-left-color: $teal-dark;
+}
+
+/*============================================================
+  HEADINGS
+============================================================*/
+h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid $teal-light;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: $teal-mid;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: $slate;
+  font-weight: 600;
+}
+
+/*============================================================
+  TITLE BLOCK
+============================================================*/
+.quarto-title-block {
+  border-left: 4px solid $teal-mid;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.quarto-title-block .title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: $teal-dark;
+}
+
+.quarto-title-block .subtitle {
+  font-family: 'Raleway', sans-serif;
+  color: $muted;
+  font-weight: 400;
+}
+
+.quarto-title-block .author,
+.quarto-title-block .date {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+/*============================================================
+  CODE BLOCKS
+============================================================*/
+pre {
+  background-color: #f0faf8 !important;
+  border: 1px solid $border;
+  border-left: 3px solid $teal-light;
+  border-radius: 4px;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+  color: $teal-dark;
+  background-color: #f0faf8;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+/*============================================================
+  CALLOUT BOXES
+============================================================*/
+
+/* Default note callout — used for function documentation */
+.callout-note {
+  border-left-color: $teal-mid !important;
+  background-color: $teal-pale !important;
+}
+
+.callout-note .callout-title {
+  background-color: $teal-mid !important;
+  color: $white !important;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+.callout-tip {
+  border-left-color: $teal-light !important;
+}
+
+.callout-warning {
+  border-left-color: #e9c46a !important;
+}
+
+.callout-important {
+  border-left-color: #e76f51 !important;
+}
+
+/*============================================================
+  TABLES (gt output)
+============================================================*/
+.gt_table {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 0.9rem;
+  border-top: 2px solid $teal-dark !important;
+  border-bottom: 2px solid $teal-dark !important;
+}
+
+.gt_col_heading {
+  background-color: $teal-pale !important;
+  color: $teal-dark !important;
+  font-weight: 700 !important;
+  font-family: 'Raleway', sans-serif !important;
+}
+
+.gt_grand_summary_row {
+  background-color: $teal-pale !important;
+  font-weight: 600 !important;
+}
+
+/*============================================================
+  FIGURES
+============================================================*/
+.figure-caption,
+figcaption {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  color: $muted;
+  font-style: italic;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+/*============================================================
+  BODY CONTENT AREA
+============================================================*/
+#quarto-content main {
+  max-width: 860px;
+  padding: 2rem 2.5rem;
+}
+
+/* Paragraph spacing */
+p {
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+/* Horizontal rule */
+hr {
+  border-color: $border;
+  margin: 2rem 0;
+}
+
+/*============================================================
+  FOOTER
+============================================================*/
+.nav-footer {
+  background-color: $teal-pale;
+  border-top: 1px solid $border;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8rem;
+  color: $muted;
+}

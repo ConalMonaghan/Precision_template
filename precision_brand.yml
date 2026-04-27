@@ -1,0 +1,56 @@
+brand:
+  color:
+    palette:
+      teal-dark:    "#1a6b7c"
+      teal-mid:     "#2a9d8f"
+      teal-light:   "#4fc3b0"
+      teal-pale:    "#e8f5f3"
+      slate:        "#2c3e50"
+      text:         "#1a2a2e"
+      muted:        "#6b8a8f"
+      background:   "#ffffff"
+      border:       "#d0e8e4"
+
+    foreground:     "#1a2a2e"
+    background:     "#ffffff"
+    primary:        "#1a6b7c"
+    secondary:      "#2a9d8f"
+    success:        "#4fc3b0"
+    info:           "#2a9d8f"
+    warning:        "#e9c46a"
+    danger:         "#e76f51"
+    light:          "#e8f5f3"
+    dark:           "#1a2a2e"
+
+  typography:
+    fonts:
+      - family: "Raleway"
+        source: google
+        weight: [400, 600, 700]
+      - family: "Source Serif 4"
+        source: google
+        weight: [400, 600]
+      - family: "JetBrains Mono"
+        source: google
+        weight: [400, 500]
+
+    base:
+      family: "Source Serif 4"
+      size:   16px
+      weight: 400
+      color:  "#1a2a2e"
+
+    headings:
+      family: "Raleway"
+      weight: 700
+      color:  "#1a6b7c"
+
+    monospace:
+      family: "JetBrains Mono"
+      size:   0.875em
+
+  logo:
+    small:  "https://raw.githubusercontent.com/ConalMonaghan/Precision_template/main/logo.png"
+    medium: "https://raw.githubusercontent.com/ConalMonaghan/Precision_template/main/logo.png"
+    large:  "https://raw.githubusercontent.com/ConalMonaghan/Precision_template/main/logo.png"
+    alt:    "PRECISION Advanced Psychometrics & Assessment Lab"
